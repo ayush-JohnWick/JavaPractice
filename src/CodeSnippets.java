@@ -14,12 +14,12 @@ public class CodeSnippets {
 	CodeSnippets cp = new CodeSnippets();
 	Scanner sc = new Scanner(System.in);
 	String s=sc.nextLine();
-	/*if(cp.BalancedString(s)) {
+	if(cp.BalancedString(s)) {
 		System.out.println("String is balanced");
 	}
 	else
 		System.out.println("String is not balanced");
-		cp.AddNumbersFromString();*/
+		cp.AddNumbersFromString();
 		cp.RotateZeroToRight();
 		//cp.RotateZeroToLeft();
 
