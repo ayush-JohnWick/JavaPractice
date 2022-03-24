@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,6 +14,7 @@ public class CodeSnippets {
         cp.AddNumbersFromString();
         cp.RotateZeroToRight();
         cp.RotateZeroToLeft();
+        cp.maxOccuranceFromString();
 
     }
 
@@ -98,6 +96,27 @@ public class CodeSnippets {
         }
         return stack.empty();
 
+    }
+
+    public void maxOccuranceFromString() {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        Map<Character, Integer> map = new HashMap<>();
+        Map.Entry<Character, Integer> maxEntry = null;
+        char[] ch = str.replaceAll(" ", "").toLowerCase().toCharArray();
+        for (char c : ch) {
+            if (!map.containsKey(c)){
+                map.put(c, 1);
+            }
+            else
+                map.put(c, map.get(c) + 1);
+        }
+        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+            if (entry.getValue() > 1|| entry.getValue().compareTo(maxEntry.getValue())>0) {
+                maxEntry= entry;
+            }
+        }
+        System.out.println("Largest occurence character is " + maxEntry.getKey() + " max occurane number is "+ maxEntry.getValue());
     }
 
 }
